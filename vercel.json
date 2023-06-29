@@ -1,23 +1,13 @@
 {
     "version": 2,
     "builds": [
-      { "src": "src/server.js", "use": "@vercel/node" }
+      {
+        "src": "src/server.js",
+        "use": "@vercel/node"
+      }
     ],
     "routes": [
-      { "src": "/(.*)", "dest": "src/server.js" }
-    ],
-    "build": {
-      "env": {
-        "PORT": "3001"
-      },
-      "commands": {
-        "build": "cd src && npm install && npm run build",
-        "dev": "cd src && npm install && npm run dev",
-        "start": "cd src && npm install && node server.js"
-      },
-      "output": {
-        "root": "src"
-      }
-    }
+      { "handle": "server" }
+    ]
   }
   
